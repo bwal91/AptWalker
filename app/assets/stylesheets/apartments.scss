@@ -15,7 +15,7 @@ body {
 	
 }
 #main-page {
-	background: url('/assets/map2.jpeg') no-repeat center center scroll;
+	background: url(image-path('/assets/map2.jpeg')) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
