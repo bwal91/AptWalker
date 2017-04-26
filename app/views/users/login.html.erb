@@ -1,0 +1,65 @@
+<%= content_for :stylesheet do %>
+  <%= stylesheet_link_tag 'users', media: 'all', 'data-turbolinks-track': 'reload'  %>
+<% end %>
+<div id="login-map">
+	<div class="Absolute-Center is-ResponsiveLogin">
+		<h2 id="toplinks"><%= flash[:error] %> </h2>
+		<div id="loginbox">
+			<h2> Already Have an Account? </h2>
+			<form class="form-inline" action="/loginuser" method="post">
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+				<div class="form-group">
+					<input class="form-control" id="username" name="login_email" type="email" placeholder="Email"/>
+				</div>
+				<div class="form-group">
+					<input class="form-control" id="password-login" name="login_password" type="password" placeholder="Password"/>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Login" class="btn btn-primary" id="login-but">
+				</div>	
+			</form>
+		</div>
+		<button href="#registerbox" class="btn btn-primary" data-toggle="collapse" id="no-acc">No Account? Click Here</button>
+		<div id="registerbox" class="collapse in">
+			<form class="form-horizontal" action="/register" method="post">
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+				<div class="form-group"> 
+					<label for="first_name_id" class="control-label col-sm-2">First Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="first_name_id" name="user[first_name]">
+					</div>  
+				</div>
+				<div class="form-group"> 
+					<label for="last_name_id" class="control-label col-sm-2">Last Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="last_name_id" name="user[last_name]">
+					</div>  
+				</div>
+				<div class="form-group"> 
+					<label for="email_id" class="control-label col-sm-2">Email</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="email_id" name="user[email]">
+					</div>  
+				</div>	
+				 <div class="form-group"> 
+					<label for="password_id" class="control-label col-sm-2">Password</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="password_id" name="user[password]" placeholder="Must be at least 8 characters">
+					</div>  
+				</div>
+				<div class="form-group"> 
+					<label for="password_confirm_id" class="control-label col-sm-4">Confirm Password</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="password_confirm_id" name="user[password_confirmation]" placeholder="Passwords Must Match">
+					</div>  
+				</div>
+				<div class="form-group"> <!-- Submit Button -->
+					<div class="col-sm-10 col-sm-offset-2">                     
+						<input type="submit" class="btn btn-primary" value="Register">
+					</div>
+				</div>        
+			 
+			</form> 
+		</div> 
+	</div>
+</div>
